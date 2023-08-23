@@ -58,12 +58,10 @@ class fibonacciClass {
         fibonacci(200);
     }
 
-    public static void fibonacci(int max)
-    {
+    public static void fibonacci(int max) {
         int a = 0;
         int b = 1;
-        while (a <= max)
-        {
+        while (a <= max) {
             System.out.println(a);
             int c = a + b;
             a = b;
@@ -72,3 +70,67 @@ class fibonacciClass {
     }
 }
 
+////////////////////
+////////// Calling from an Array in Java
+////////////////////
+
+// Initialise empty array, add random numbers to it and call them
+
+class randomNumbers {
+    public static void main(String[] args) {
+        System.out.println("Main method started");
+        // Call the function with an int
+        randomNumber(30);
+    }
+
+    public static void randomNumber(int max) {
+        int randoms[] = new int[max];
+        Random rand = new Random();
+        for (int i = 0; i < max; i++) {
+            randoms[i] = rand.nextInt(100);
+            System.out.println(i + " = " + randoms[i]);
+        }
+    }
+}
+
+////////////////////
+////////// Rotate an array
+////////////////////
+
+// Pass a function an array, and an int of which to rotate them
+// move the last value to the front of the array, that many times
+// Commented out to avoid compilation errors
+// Not yet working - Revisit tomorrow.
+
+// class rotateArray {
+//     public static void main(String[] args) {
+//         System.out.println("Main method started");
+//         // Call the function with an int
+//         arrayRotate(3);
+//     }
+
+//     // Create the random number array method
+//     public static int[] randomNumberReturn(int max) {
+//         int randoms[] = new int[max];
+//         Random rand = new Random();
+//         for (int i = 0; i < max; i++) {
+//             randoms[i] = rand.nextInt(100);
+//         }
+//         return randoms;
+//     }
+
+//     // rotate the array method
+//     public static int[] arrayRotate(int turns) {
+//         // Create the random number array
+//         ArrayList<int> randomNos = new ArrayList<int>();
+
+//         randomsNos = randomNumberReturn(5);
+//         for (int i = 0; i < turns; i++)
+//         {
+//             // Grab the last element in the array
+//             int shifter = randomsNos[randomsNos.length - 1];
+//         }
+
+//         return randomsNos;
+//     }
+// }
