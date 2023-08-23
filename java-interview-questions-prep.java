@@ -1,4 +1,5 @@
 import java.util.*;
+
 ////////////////////
 ////////// Calculate the binary gap
 ////////////////////
@@ -10,7 +11,7 @@ class binGapClass {
     public static void main(String[] args) {
         System.out.println("Main method started");
         // Call the function with an int
-        binGap(1001435);
+        //binGap(1001435);
     }
 
     public static int binGap(int N)
@@ -43,3 +44,31 @@ class binGapClass {
         return result;   
     }
 }
+
+////////////////////
+////////// Print the Fibonacci sequence
+////////////////////
+
+// Numbers that are the sum of the two numbers before them
+
+class fibonacciClass {
+    public static void main(String[] args) {
+        System.out.println("Main method started");
+        // Call the function with an int
+        fibonacci(200);
+    }
+
+    public static void fibonacci(int max)
+    {
+        int a = 0;
+        int b = 1;
+        while (a <= max)
+        {
+            System.out.println(a);
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+    }
+}
+
