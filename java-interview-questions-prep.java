@@ -136,3 +136,39 @@ class rotateArray {
         return startArray;
     }
 }
+
+
+////////////////////
+////////// Find the array element WITHOUT a duplicate
+////////////////////
+
+class findNonPaired {
+    public static void main(String[] args) {
+        // Create a test array
+        int[] testArray = new int[] {1, 1, 2, 3, 3, 4, 5, 5, 5};
+        // Call the function with an int
+        findSolo(testArray);
+    }
+
+    // // Rotate the array method
+    public static int findSolo(int[] array) {
+        int loner = 0;;
+        // For each int in the array
+        for (int i = 0; i < array.length; i++)
+        {
+            // Count the number of those ints in the array
+            int matches = 0;
+            // Check in i for equality with each array element. We should get 2 for every int that has a pair
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    matches++;
+                }
+            }
+            if (matches < 2) {
+                loner = array[i];
+            }
+        }
+        System.out.println("Loner is " + loner);
+        return loner;
+    }
+}
