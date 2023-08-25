@@ -102,35 +102,37 @@ class randomNumbers {
 // Commented out to avoid compilation errors
 // Not yet working - Revisit tomorrow.
 
-// class rotateArray {
-//     public static void main(String[] args) {
-//         System.out.println("Main method started");
-//         // Call the function with an int
-//         arrayRotate(3);
-//     }
+class rotateArray {
+    public static void main(String[] args) {
+        // Call the function with an int
+        arrayRotate(3);
+    }
 
-//     // Create the random number array method
-//     public static int[] randomNumberReturn(int max) {
-//         int randoms[] = new int[max];
-//         Random rand = new Random();
-//         for (int i = 0; i < max; i++) {
-//             randoms[i] = rand.nextInt(100);
-//         }
-//         return randoms;
-//     }
-
-//     // rotate the array method
-//     public static int[] arrayRotate(int turns) {
-//         // Create the random number array
-//         ArrayList<int> randomNos = new ArrayList<int>();
-
-//         randomsNos = randomNumberReturn(5);
-//         for (int i = 0; i < turns; i++)
-//         {
-//             // Grab the last element in the array
-//             int shifter = randomsNos[randomsNos.length - 1];
-//         }
-
-//         return randomsNos;
-//     }
-// }
+    // // Rotate the array method
+    public static int[] arrayRotate(int turns) {
+        // Create the random number array
+        int[] startArray = new int[] {1, 2, 3, 4, 5};
+        System.out.println("Before loop, array is:");
+        for (int x : startArray)
+        {
+            System.out.println("Index " + (x - 1) + " = " + startArray[x - 1]);
+        }
+        
+        // Rotate the array X times
+        for (int i = 0; i < turns; i++)
+        {
+            System.out.println("Rotation " + (i+1));
+            // Store the last element of the array
+            int last = startArray[startArray.length - 1];
+            System.out.println("Shifting");
+            for (int j = startArray.length -1; j > 0; j--)
+            {
+                startArray[j] = startArray[j - 1];
+                System.out.println("Index " + j + " = " + startArray[j]);
+            }
+            startArray[0] = last;
+            System.out.println("Index 0" + " = " + startArray[0]);
+        }
+        return startArray;
+    }
+}
