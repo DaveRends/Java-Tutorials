@@ -146,11 +146,11 @@ class findNonPaired {
     public static void main(String[] args) {
         // Create a test array
         int[] testArray = new int[] {1, 1, 2, 3, 3, 4, 5, 5, 5};
-        // Call the function with an int
+        // Call the function with the array
         findSolo(testArray);
     }
 
-    // // Rotate the array method
+    // // Find the loner
     public static int findSolo(int[] array) {
         int loner = 0;;
         // For each int in the array
