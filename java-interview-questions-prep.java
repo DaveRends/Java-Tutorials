@@ -181,12 +181,12 @@ class frogJump {
         // Create a test array
         int[] testArray = new int[] { 1, 1, 2, 3, 3, 4, 5, 5, 5 };
         // Call the function with the array
-        jumps(10, 85, 30);
+        jumps(60, 100, 25);
     }
 
     // This version failed pretty bad on efficency...
     public static int jumps(int X, int Y, int D) {
-        // // while position (X) is less than goal (Y)
+        // while position (X) is less than goal (Y)
         // int position = X;
         // int jumps = 0;
         // while (position < Y)
@@ -205,5 +205,62 @@ class frogJump {
         return (Y - X) / D + 1;
     }
     // More efficent
+}
 
+////////////////////
+////////// Find the missing int in an array
+////////////////////
+
+class missingInt {
+    public static void main(String[] args) {
+        // Create a test array
+        int[] testArray = new int[] {1, 2, 3, 5, 6};
+        // Call the function with the array
+        findInt(testArray);
+    }
+
+    public static int findInt(int[] array) {
+
+        // This solution works but again, is inefficent
+        // int missingInt = 0;
+        // // Easiest if we create an ArrayList, so no duplicates and has .contains method
+        // List<Integer> arrList = new ArrayList<Integer>(array.length);
+        // // Populate the ArrayList with array ints
+        // for (int i : array) {
+        //     arrList.add(i);
+        // }
+        // // Array List is now populated
+        // for (int i = 1; i <= arrList.size() + 1; i++) {
+        //     if (!arrList.contains(i)) {
+        //         missingInt = i;
+        //     }
+        // }
+        // System.out.println("Missing int is " + missingInt);
+        // return missingInt;
+        int expectedInt = 1;
+        int missingInt = 0;
+        Arrays.sort(array);
+        if (array.length > 0)
+        {
+            for (int x : array) {
+                if (x == expectedInt) {
+                    expectedInt++;
+                } else {
+                    missingInt = expectedInt;
+                }
+            }
+
+        }
+        else if (array.length == 0)
+        {
+            missingInt = 1;
+        }
+        // This handles if the missing int is the FINAL number in the sequence
+        if (missingInt == 0)
+        {
+            missingInt = array[array.length - 1] + 1;
+        }
+        System.out.print(missingInt);
+        return missingInt;
+    }
 }
