@@ -216,7 +216,7 @@ class missingInt {
         // Create a test array
         int[] testArray = new int[] {1, 2, 3, 5, 6};
         // Call the function with the array
-        findInt(testArray);
+        //findInt(testArray);
     }
 
     public static int findInt(int[] array) {
@@ -263,4 +263,18 @@ class missingInt {
         System.out.print(missingInt);
         return missingInt;
     }
+}
+
+
+
+class solution {
+    public static void main(String[] args) {
+        solved();
+    }
+
+    // This version failed pretty bad on efficency...
+    public static int solved() {
+        return 0;
+    }
+    // More efficent
 }
